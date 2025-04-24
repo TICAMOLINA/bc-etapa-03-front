@@ -1,0 +1,34 @@
+.section-cards {
+    background-color: #f1f2f3;
+    padding: 1rem;
+    border-bottom: 2px solid #5c5c64;
+
+    &__header h1 {
+        margin-bottom: 10px;
+    }
+}
+
+.cards-container {
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 2rem;
+
+    @media screen and (min-width: 576px) and (max-width: 991px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    @media screen and (min-width: 992px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); // Tres columnas
+        gap: 20px; // Espacio reducido entre las columnas
+        max-width: 90%; // Limita el ancho total del contenedor
+        margin: 0 auto; // Centra el contenedor en la página
+        justify-content: center; // Centra las columnas horizontalmente
+        padding: 0 10px; // Reduce el espacio entre el contenedor y el borde de la pantalla
+
+    }
+}

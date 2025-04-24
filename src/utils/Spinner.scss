@@ -1,0 +1,53 @@
+.spinner {
+    display: grid;
+    place-items: center;
+
+    &__loader {
+        position: relative;
+        background-color: #A90B45;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: conic-gradient(#A90B45, transparent);
+        animation: rotate 1s linear infinite;
+    }
+
+    &__loader:before,
+    &__loader:after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    &__loader:before{
+        width: 64px;
+        height: 64px;
+        top: 8px;
+        left: 8px;
+        background-color: white;
+    }
+
+    &__loader:after{
+        height: 8px;
+        width: 8px;
+        background-color: #A90B45;
+        top: 0;
+        left: 36px;
+    }
+
+
+
+    p {
+        font-family: tahoma;
+        font-weight: bold;
+        color: #A90B45;
+        text-align: center;
+        margin-top: 12px;
+    }
+
+@keyframes rotate {
+    from{ transform: rotateZ(0);}
+    to{ transform: rotateZ(360deg);}
+}
+
+}

@@ -1,0 +1,57 @@
+@use '../scss/variables';
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: variables.$color-footer-nav-background;
+    gap: 2rem;
+    height: 18rem;
+    margin-top: 4rem;
+
+
+    &__footer-logo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        width: 6rem;
+        gap: 1rem;
+        font-size: 2em;
+        border: 1px dotted variables.$color-footer-text;
+
+        a {
+            color: variables.$color-footer-text
+        }
+    }
+
+    &__footer-text {
+        color: variables.$color-footer-text;
+        text-align: center;
+    }
+
+    @media screen and (min-width: 576px) {
+        & {
+            height: 16rem;
+
+            &__footer-logo {
+                font-size: 2.5em;
+                width: 13rem;
+                gap: 1.5rem;
+                border: none;
+            }
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        & {
+            height: 10rem;
+
+            &__footer-logo {
+                width: 100%;
+                gap: 4.5rem
+            }
+        }
+    }
+}

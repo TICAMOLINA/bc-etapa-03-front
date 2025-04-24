@@ -1,0 +1,149 @@
+/* -----------------------------------------*/
+/* SEARCHBAR
+/*------------------------------------------*/
+
+.search-bar {
+    display: flex;
+    background-color: #A90B45;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    min-height: 5.5rem;
+    order: 1;
+
+
+
+
+    &__logo-container {
+        width: auto;
+        height: 5.5rem;
+        display: flex;
+        justify-content: end;
+        order: 1;
+    }
+
+    &__logo-image {
+        height: 100%;
+    }
+
+    &__form-container {
+        position: relative;
+        padding: 2rem;
+        min-width: 13rem;
+        max-width: 25rem;
+        display: flex;
+        justify-content: center;
+        order: 3;
+    }
+
+    &__form-label {
+        display: none;
+    }
+
+    &__form-search {
+        outline: none;
+        padding: 15px;
+        box-sizing: border-box;
+        background-color: aliceblue;
+        color: black;
+        height: 2rem;
+        width: 8rem;
+        border-radius: 10px;
+        border: none;
+    }
+
+    &__form-submit {
+        position: absolute;
+        top: 24px;
+        right: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: red;
+        width: 50px;
+        height: 50px;
+        line-height: 28px;
+        border: none;
+
+        .fa-search {
+            font-size: 18px;
+            color: aliceblue;
+            transition: all .7s ease
+        }
+    }
+
+
+    &__form-submit:hover .fa-search {
+        transform: rotate(-360deg)
+    }
+
+    &__carrito-container {
+        position: relative;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        order: 4;
+
+        a {
+            display: inline-block;
+            padding: 10px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #ffffff, #e0e0e0);
+            box-shadow: 3px 3px 8px #b0b0b0, -3px -3px 8px #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        a i {
+            font-size: 1.7em;
+            color: #333;
+            transition: transform 0.3s ease;
+        }
+
+        a:hover,
+        a:focus {
+            transform: scale(1.1);
+            box-shadow: 5px 5px 10px #b0b0b0, -5px -5px 10px #ffffff;
+        }
+
+        a:hover i,
+        a:focus i {
+            transform: scale(1.2);
+        }
+    }
+
+    &__carrito-items {
+        position: absolute;
+        top: 14px;
+        right: 25px;
+        border-radius: 50%;
+        width: 1.2rem;
+        height: 1.2rem;
+        background-color: red;
+        color: white;
+        font-size: 0.8em;
+        text-align: center;
+    }
+
+
+    @media screen and (min-width: 576px) {
+        &__form-container {
+            max-width: 20rem;
+        }
+
+        &__form-search {
+            width: 15rem;
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        &__form-container {
+            max-width: 35rem;
+        }
+
+        &__form-search {
+            width: 30rem;
+        }
+    }
+
+
+}

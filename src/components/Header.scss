@@ -1,0 +1,90 @@
+.main-header {
+    display: flex;
+    flex-direction: column-reverse;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+
+    @media screen and (min-width: 992px) {
+        & {
+            flex-direction: column;
+        }
+    }
+}
+
+#menu {
+    display: none;
+
+    &:checked+.nav-bar {
+
+        display: block;
+        transform: translateX(0);
+    }
+
+    &:checked~.search-bar .menu-toogle .menu-toogle__label {
+        background-color: grey;
+    }
+
+    &:checked~.search-bar .menu-toogle .menu-toogle__label .menu-toogle__top-bread {
+        background-color: rgb(212, 207, 207);
+    }
+
+    &:checked~.search-bar .menu-toogle .menu-toogle__label .menu-toogle__meat {
+        background-color: rgb(212, 207, 207);
+    }
+
+    &:checked~.search-bar .menu-toogle .menu-toogle__label .menu-toogle__bottom-bread {
+        background-color: rgb(212, 207, 207);
+    }
+
+}
+
+/* -----------------------------------------*/
+/* MENÚ TOOGLE
+/*------------------------------------------*/
+
+.menu-toogle {
+    display: block;
+    /* background-color: red; */
+    flex: 0 0 3rem;
+    position: relative;
+    cursor: pointer;
+    order: 0;
+
+    &__label {
+        display: block;
+        /* background-color: black; */
+        height: 100%;
+    }
+
+    &__top-bread,
+    &__meat,
+    &__bottom-bread {
+        display: block;
+        background-color: black;
+        height: .2rem;
+        position: absolute;
+        left: .7rem;
+        right: .3rem;
+    }
+
+    &__top-bread {
+        top: 2rem;
+    }
+
+    &__meat {
+        /* Centrar sin usar flexbox */
+        top: 50%;
+        /* centrando verticalmente */
+        margin-top: -.1rem;
+    }
+
+    &__bottom-bread {
+        bottom: 2rem;
+    }
+
+    @media screen and (min-width: 992px) {
+        display: none;
+    }
+
+}

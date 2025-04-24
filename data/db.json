@@ -1,0 +1,211 @@
+{
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Camiseta Alemania - Mundial Italia 1990",
+      "foto": "/imgs/alemania-1990.webp",
+      "sliderFoto": "/imgs/alemania-90.webp",
+      "descripcion": "La titular color blanca, utilizada por los bávaros en aquella disputada final contra el equipo argentino.",
+      "precio": 60000,
+      "stock": 1000,
+      "categoria": "Selecciones",
+      "envio": false
+    },
+    {
+      "id": "2",
+      "nombre": "Camiseta Alemania - Mundial Estados Unidos 1994",
+      "foto": "/imgs/alemania-1994.webp",
+      "sliderFoto": "/imgs/alemania-94.webp",
+      "descripcion": "La camiseta titular, con un hermoso diseño que mezcla el típico color blanco con los colores de la bandera.",
+      "precio": 60000,
+      "stock": 1000,
+      "categoria": "Selecciones",
+      "envio": true
+    },
+    {
+      "id": "3",
+      "nombre": "Camiseta Argentina - Mundial México 1986",
+      "foto": "/imgs/argentina-1986.webp",
+      "sliderFoto": "/imgs/argentina-86.webp",
+      "descripcion": "La titular de la albiceleste, con la que el equipo de Maradona levantó el trofeo en esa competición.",
+      "precio": 55000,
+      "stock": 1000,
+      "categoria": "Selecciones",
+      "envio": true
+    },
+    {
+      "id": "4",
+      "nombre": "Camiseta Argentina - Mundial Francia 1998",
+      "foto": "/imgs/argentina-1998.webp",
+      "sliderFoto": "/imgs/argentina-98.webp",
+      "descripcion": "Camiseta alternativa de aquel equipazo que tenia figuras como Batitusta, Ortega y Simeone.",
+      "precio": 58000,
+      "stock": 1000,
+      "categoria": "Selecciones",
+      "envio": false
+    },
+    {
+      "id": "5",
+      "nombre": "Camiseta de Boca Juniors - Copa Libertadores 2000",
+      "foto": "/imgs/boca-libertadores-2000.webp",
+      "sliderFoto": "/imgs/boca-00.webp",
+      "descripcion": "Camiseta titular de aquel equipo que con figuras como Riquelme y Palermo levantaron el trofeo continental.",
+      "precio": 55000,
+      "stock": 1000,
+      "categoria": "Clubes",
+      "envio": true
+    },
+    {
+      "id": "6",
+      "nombre": "Camiseta de Brasil - Mundial de Corea y Japón 2002",
+      "foto": "/imgs/brasil-2002.webp",
+      "sliderFoto": "/imgs/brasil-02.webp",
+      "descripcion": "La titular de la verdeamarela, con la que coronaron el trofeo mundialista en aquella ocasión.",
+      "precio": 60000,
+      "stock": 1000,
+      "categoria": "Selecciones",
+      "envio": false
+    },
+    {
+      "id": "7",
+      "nombre": "Camiseta de Croacia - Mundial de Francia 1998",
+      "foto": "/imgs/camiseta-croacia-primera-equipacion-retro-clasica-1998.webp",
+      "sliderFoto": "/imgs/croacia-98.webp",
+      "descripcion": "La camiseta titular con un hermoso diseño, del equipo revelación de aquella jornada mundialista.",
+      "precio": 55000,
+      "stock": 1000,
+      "categoria": "Selecciones",
+      "envio": true
+    },
+    {
+      "id": "8",
+      "nombre": "Camiseta de España - Mundial de Sudáfrica 2010",
+      "foto": "/imgs/espania-2010.webp",
+      "sliderFoto": "/imgs/espana-10.webp",
+      "descripcion": "La camiseta titular con la que la 'Furia Roja' hizo historia, alzando su primer trofeo en la cita mundialista.",
+      "precio": 58000,
+      "stock": 1000,
+      "categoria": "Selecciones",
+      "envio": true
+    },
+    {
+      "id": "9",
+      "nombre": "Camiseta de Francia - Mundial de Francia 1998",
+      "foto": "/imgs/francia-1998.webp",
+      "sliderFoto": "/imgs/francia-98.webp",
+      "descripcion": "La bella camiseta azul titular de aquel equipo que comandado por la figura de Zinedine Zidane levantó el trofeo por primera vez.",
+      "precio": 58000,
+      "stock": 1000,
+      "categoria": "Selecciones",
+      "envio": true
+    },
+    {
+      "id": "10",
+      "nombre": "Camiseta de Paises Bajos - Eurocopa Alemania 1988",
+      "foto": "/imgs/paises-bajos-1988.webp",
+      "sliderFoto": "/imgs/paisesbajos-88.webp",
+      "descripcion": "La titular de la 'Naranja Mecánica', con la que ganó su primer título continental frente a la poderosa Unión Soviética",
+      "precio": 60000,
+      "stock": 1000,
+      "categoria": "Selecciones",
+      "envio": true
+    },
+    {
+      "id": "11",
+      "nombre": "Camiseta de River Plate - Copa Libertadores 1986",
+      "foto": "/imgs/river-1986.webp",
+      "sliderFoto": "/imgs/river-86.webp",
+      "descripcion": "La titular del equipo millonario, que con la figura de Enzo Francescoli levantó por primera vez el título en aquel año",
+      "precio": 550000,
+      "stock": 1000,
+      "categoria": "Clubes",
+      "envio": true
+    },
+    {
+      "id": "12",
+      "nombre": "Camiseta de la Unión Soviética - Eurocopa de Alemania 1988",
+      "foto": "/imgs/urss-1988.webp",
+      "sliderFoto": "/imgs/union-sovietica-88.avif",
+      "descripcion": "La camiseta titular con la que el combinado comunista fue revelación y llegó a la instancia decisiva de aquel certamen",
+      "precio": 62000,
+      "stock": 1000,
+      "categoria": "Selecciones",
+      "envio": false
+    },
+    {
+      "id": "13",
+      "nombre": "Camiseta de Rumania - Mundial de Estados Unidos 1994",
+      "foto": "/imgs/rumania-1994.webp",
+      "sliderFoto": "/imgs/rumania-94.webp",
+      "descripcion": "La camiseta titular de aquel gran combinado que logro vencer nada más y nada menos que a la subcampeona Argentina",
+      "precio": 62000,
+      "stock": 1000,
+      "categoria": "Selecciones",
+      "envio": true
+    },
+    {
+      "id": "14",
+      "nombre": "Camiseta de Ferro - Primera División Argentina 1984",
+      "foto": "/imgs/ferro-1984.webp",
+      "sliderFoto": "/imgs/ferro-84.webp",      
+      "descripcion": "Camiseta titular histórica con la que el equipo recientemente ascendido dió el batacazo ganándole la final del torneo a River",
+      "precio": 62000,
+      "stock": 1000,
+      "categoria": "Clubes",
+      "envio": true
+    },
+    {
+      "id": "15",
+      "nombre": "Camiseta de Yugoslavia - Mundial 1990",
+      "foto": "/imgs/yugoslavia-1990.webp",
+      "sliderFoto": "/imgs/yugoslavia-90.webp",
+      "descripcion": "La camiseta alternativa blanca de aquel poderoso y duro conjunto balcánico que se midió frente a Argentina en Cuartos de Final",
+      "precio": 62000,
+      "stock": 1000,
+      "categoria": "Selecciones",
+      "envio": true
+    }
+  ],
+  "carrito": [
+    {
+      "id": "5ba8",
+      "createAt": 1743029127944,
+      "cantidad": 3,
+      "carrito": [
+        {
+          "id": "6",
+          "nombre": "Camiseta de Brasil - Mundial de Corea y Japón 2002",
+          "foto": "imgs/brasil-2002.webp",
+          "descripcion": "La titular de la verdeamarela, con la que coronaron el trofeo mundialista en aquella ocasión.",
+          "precio": 60000,
+          "stock": 1000,
+          "categoria": "Selecciones",
+          "envio": false,
+          "cantidad": 2
+        },
+        {
+          "id": "8",
+          "nombre": "Camiseta de España - Mundial de Sudáfrica 2010",
+          "foto": "imgs/espania-2010.webp",
+          "descripcion": "La camiseta titular con la que la 'Furia Roja' hizo historia, alzando su primer trofeo en la cita mundialista.",
+          "precio": 58000,
+          "stock": 1000,
+          "categoria": "Selecciones",
+          "envio": true,
+          "cantidad": 2
+        },
+        {
+          "id": "1",
+          "nombre": "Camiseta Alemania - Mundial Italia 1990",
+          "foto": "imgs/alemania-1990.webp",
+          "descripcion": "La titular color blanca, utilizada por los bávaros en aquella disputada final contra el equipo argentino.",
+          "precio": 60000,
+          "stock": 1000,
+          "categoria": "Selecciones",
+          "envio": true,
+          "cantidad": 1
+        }
+      ]
+    }
+  ]
+}

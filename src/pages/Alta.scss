@@ -1,0 +1,168 @@
+@use '../scss/variables';
+
+.alta-container {
+    margin: 1rem;
+
+    &__form-crud-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9em;
+        margin-top: 1.5rem;
+        gap: 10px;
+        width: 100%;
+
+        span {
+            text-transform: uppercase;
+            color: variables.$color-span-principal;
+        }
+    }
+
+    &__form-crud {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    &__form-alta {
+        padding: 1.5rem;
+        border-radius: 8px;
+        width: auto;
+        margin: auto;
+        max-width: 25rem;
+        background-color: #F6AFBC;
+        box-shadow: 1px 3px 10px black;
+
+
+        label {
+            display: block;
+            margin-bottom: 2px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 3px;
+            margin-bottom: 6px;
+            border-radius: 6px;
+            border: 1px solid black;
+        }
+
+
+        button {
+            padding-block: 4px;
+            padding-inline: 8px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+    }
+
+    &__checkbox-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+
+        label {
+            margin: 0;
+            text-align: start;
+            font-weight: 600;
+        }
+
+        input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+    }
+
+    &__btn-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__btn-submit {
+        background-color: rgb(15, 161, 64);
+
+        &:hover {
+            background-color: rgb(10, 114, 45);
+        }
+    }
+
+    &__btn-submit-edit {
+        background-color: rgb(255, 217, 0);
+
+        &:hover {
+            background-color: rgb(190, 162, 0);
+        }
+    }
+
+    &__btn-reset {
+        background-color: variables.$color-bg-delete-button;
+
+        &:hover {
+            background-color: variables.$color-hover-delete-button;
+        }
+    }
+
+    @media screen and (min-width: 576px) {
+        &__checkbox-group {
+            justify-content: start;
+        }
+
+        &__form-alta {
+
+            label {
+                text-align: start;
+                margin-left: 10px;
+            }
+
+            button {
+                padding: 10px;
+                font-weight: 600;
+                width: 6rem;
+            }
+        }
+
+        &__btn-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 5rem;
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+
+        &__form-crud-container  {
+            justify-content: start;
+            align-items: start;
+            margin-left: 2rem;
+
+            h1 {
+                font-size: 1.6em;
+            }
+        }
+
+        &__form-alta {
+            margin: 0;
+            width: 50%;
+            max-width: none;
+
+            label {
+                font-size: 1.2em;
+            }
+
+            input {
+                padding: 8px
+            }
+        }
+    }
+}
