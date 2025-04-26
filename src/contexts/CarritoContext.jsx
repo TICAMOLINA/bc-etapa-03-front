@@ -44,7 +44,6 @@ const CarritoProvider = ( {children} ) => {
         try {
 
             const dataCarrito = {
-                createAt: Date.now(),
                 cantidad: carrito.length,
                 carrito
             }
