@@ -1,5 +1,5 @@
 .drop-area {
-    border: 2px dashed #ccc;
+    border: 2px dashed black;
     border-radius: 20px;
     width: 300px;
     margin: 25px 0;
@@ -17,6 +17,10 @@
     }
     & #lbl-foto {
         display: none;
+    }
+    &-image {
+        display: flex;
+        justify-content: center;
     }
     &-image img {
         width: 150px;

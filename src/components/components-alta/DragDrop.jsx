@@ -61,8 +61,7 @@ const DragDrop = ({ setFoto, srcImagenBack, setSrcImagenBack }) => {
     return (
         <div className='drop-area' onDrop={handleDrop}>
             <p>
-                Subir imagen al servidor con <b>File Dialog</b> o con
-                <b> drag and drop</b> dentro del area punteada.
+                Suba fotos del producto arrastrando dentro del area punteada (<b>drag and drop</b>) o desde el archivo abriendo el <b>cuadro de diálogo</b>.
             </p>
 
             <input type="file" id="lbl-foto" accept="image/*" onChange={handleChange} />

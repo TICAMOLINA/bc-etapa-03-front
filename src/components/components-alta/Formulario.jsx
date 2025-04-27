@@ -42,6 +42,7 @@ const Formulario = () => {
             const productoNuevoConImagen = {...form, ...foto}
             actualizarProductoContext(productoNuevoConImagen)          
         }
+        handleReset()
     }
 
     const handleChange = (e) => {

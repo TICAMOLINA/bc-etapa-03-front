@@ -1,11 +1,11 @@
 /* -----------------------------------------*/
 /* SEARCHBAR
 /*------------------------------------------*/
+@use '../scss/variables';
 
 .search-bar {
     display: flex;
-    background-color: #A90B45;
-    flex-wrap: wrap;
+    background-color: variables.$color-base;
     justify-content: space-between;
     height: auto;
     min-height: 5.5rem;
