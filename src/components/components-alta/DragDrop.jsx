@@ -1,4 +1,5 @@
 
+import { peticionesHttp } from '../../helpers/peticiones-http'
 import './DragDrop.scss'
 
 const DragDrop = ({ setFoto, srcImagenBack, setSrcImagenBack }) => {
@@ -18,27 +19,41 @@ const DragDrop = ({ setFoto, srcImagenBack, setSrcImagenBack }) => {
 
     }
 
-    const handleFiles = (files) => {
+    const handleFiles = async (files) => {
         const file = files[0]
-        uploadFile(file)
+        await uploadFile(file)
         previewFile(file)
     }
 
-    const uploadFile = (file) => {
+    const uploadFile = async (file) => {
         console.log('llego a upload', file);
+        const url = import.meta.env.VITE_BACKEND_UPLOAD
+
+        try {            
+            const formData = new FormData()
+            formData.append('foto', file)
+            
+            const options = {
+                method: 'POST',
+                body: formData
+            }
+  
+            const imagenUp = await peticionesHttp(url, options)
+            // setFoto(imagenUp)
+
+        } catch (error) {
+            console.error('[uploadFile]', error)
+        }
+
     }
 
     const previewFile = (file) => {
-        console.log('llego a preview', file);
-
-        // API READER -> del window o BOM navegador
+        // console.log('llego a preview', file);
         const reader = new FileReader()
-        reader.readAsDataURL(file) // A partir del archivo binario creo una url para que pueda previsualizar
-
-        // espero hasta que el archivo haya sido leido completamente
+        reader.readAsDataURL(file)
         reader.addEventListener('loadend', () => {
-            setSrcImagenBack(reader.result)
-        }) // cuando termino de leer el archivo
+        setSrcImagenBack(reader.result)
+        })
     }
 
 
