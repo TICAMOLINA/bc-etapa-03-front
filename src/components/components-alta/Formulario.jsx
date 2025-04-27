@@ -28,8 +28,9 @@ const Formulario = () => {
 
     const [form, setForm] = useState(formInicial)
 
-    const [foto, setFoto] = useState('')
-    const [srcImagenBack, setSrcImagenBack] = useState('')
+    const placeHolderImagen = 'http://localhost:8080/uploads/elementor-placeholder-image-3.webp'
+    const [foto, setFoto] = useState({foto: placeHolderImagen})
+    const [srcImagenBack, setSrcImagenBack] = useState(placeHolderImagen)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -55,6 +56,8 @@ const Formulario = () => {
     const handleReset = () => {
         setForm(formInicial)
         setProductoAEditar(null)
+        setFoto({foto: placeHolderImagen})
+        setSrcImagenBack(placeHolderImagen)
     }
 
     return (
@@ -100,12 +103,6 @@ const Formulario = () => {
                     setFoto={setFoto} 
                     srcImagenBack={srcImagenBack}
                     setSrcImagenBack={setSrcImagenBack}/>
-                </div>
-                <div>
-                    <label htmlFor="lbl-foto">Foto</label>
-                    <input onChange={handleChange}
-                        type="text" id="lbl-foto"
-                        name="foto" value={form.foto} />
                 </div>
                 <div className="alta-container__checkbox-group">
                     <label className="checkbox-send" htmlFor="lbl-envio">Envío</label>
