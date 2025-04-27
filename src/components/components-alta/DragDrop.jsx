@@ -39,7 +39,8 @@ const DragDrop = ({ setFoto, srcImagenBack, setSrcImagenBack }) => {
             }
   
             const imagenUp = await peticionesHttp(url, options)
-            // setFoto(imagenUp)
+            // console.log(imagenUp);
+            setFoto(imagenUp)
 
         } catch (error) {
             console.error('[uploadFile]', error)

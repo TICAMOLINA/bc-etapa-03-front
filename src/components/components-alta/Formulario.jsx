@@ -35,9 +35,11 @@ const Formulario = () => {
         e.preventDefault()
 
         if (form.id === null) {
-            crearProductoContext(form)
+            const productoNuevoConImagen = {...form, ...foto}
+            crearProductoContext(productoNuevoConImagen)
         } else {
-            actualizarProductoContext(form)
+            const productoNuevoConImagen = {...form, ...foto}
+            actualizarProductoContext(productoNuevoConImagen)          
         }
     }
 
