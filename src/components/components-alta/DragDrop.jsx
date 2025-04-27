@@ -15,8 +15,9 @@ const DragDrop = ({ setFoto, srcImagenBack, setSrcImagenBack }) => {
         handleFiles(files)
     }
 
-    const handleChange = () => {
-
+    const handleChange = (e) => {
+        const files = e.target.files
+        handleFiles(files)
     }
 
     const handleFiles = async (files) => {
@@ -26,7 +27,6 @@ const DragDrop = ({ setFoto, srcImagenBack, setSrcImagenBack }) => {
     }
 
     const uploadFile = async (file) => {
-        console.log('llego a upload', file);
         const url = import.meta.env.VITE_BACKEND_UPLOAD
 
         try {            
