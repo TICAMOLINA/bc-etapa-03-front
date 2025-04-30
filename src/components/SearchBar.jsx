@@ -2,12 +2,11 @@ import { Link } from 'react-router'
 import './SearchBar.scss'
 import { useContext } from 'react'
 import CarritoContext from '../contexts/CarritoContext'
-import productosTotalesCarrito from '../utils/cantidadProductosCarrito'
 import ProductosContext from '../contexts/ProductosContext'
 
 const SearchBar = () => {
 
-    const { carrito } = useContext(CarritoContext)
+    const { carrito, cantidadTotalProductos } = useContext(CarritoContext)
     const { textFilter, setTextFilter} = useContext(ProductosContext)
 
     return (
@@ -32,7 +31,7 @@ const SearchBar = () => {
                     carrito.length <= 0 ? (
                         <p></p>
                     ) : (
-                        <div className='search-bar__carrito-items'><span>{productosTotalesCarrito(carrito)}</span></div>
+                        <div className='search-bar__carrito-items'><span>{cantidadTotalProductos > 0 && cantidadTotalProductos}</span></div>
                     )
                 }
             </div>

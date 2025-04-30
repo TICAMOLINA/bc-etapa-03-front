@@ -29,18 +29,18 @@ const Formulario = () => {
     const [form, setForm] = useState(formInicial)
 
     const placeHolderImagen = 'http://localhost:8080/uploads/elementor-placeholder-image-3.webp'
-    const [foto, setFoto] = useState({foto: placeHolderImagen})
+    const [foto, setFoto] = useState({ foto: placeHolderImagen })
     const [srcImagenBack, setSrcImagenBack] = useState(placeHolderImagen)
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
         if (form.id === null) {
-            const productoNuevoConImagen = {...form, ...foto}
+            const productoNuevoConImagen = { ...form, ...foto }
             crearProductoContext(productoNuevoConImagen)
         } else {
-            const productoNuevoConImagen = {...form, ...foto}
-            actualizarProductoContext(productoNuevoConImagen)          
+            const productoNuevoConImagen = { ...form, ...foto }
+            actualizarProductoContext(productoNuevoConImagen)
         }
         handleReset()
     }
@@ -57,7 +57,7 @@ const Formulario = () => {
     const handleReset = () => {
         setForm(formInicial)
         setProductoAEditar(null)
-        setFoto({foto: placeHolderImagen})
+        setFoto({ foto: placeHolderImagen })
         setSrcImagenBack(placeHolderImagen)
     }
 
@@ -82,10 +82,16 @@ const Formulario = () => {
                 </div>
                 <div>
                     <label htmlFor="lbl-categoria">Categoría</label>
-                    <input onChange={handleChange}
-                        type="text" id="lbl-categoria"
+                    <select
+                        onChange={handleChange}
+                        id="lbl-categoria"
                         name="categoria"
-                        value={form.categoria} />
+                        value={form.categoria}
+                    >
+                        <option value="">Seleccione una opción</option>
+                        <option value="Selecciones">Selecciones</option>
+                        <option value="Clubes">Clubes</option>
+                    </select>
                 </div>
                 <div>
                     <label htmlFor="lbl-descripcion">Descripción</label>
@@ -100,10 +106,10 @@ const Formulario = () => {
                         name="stock" value={form.stock} />
                 </div>
                 <div>
-                    <DragDrop 
-                    setFoto={setFoto} 
-                    srcImagenBack={srcImagenBack}
-                    setSrcImagenBack={setSrcImagenBack}/>
+                    <DragDrop
+                        setFoto={setFoto}
+                        srcImagenBack={srcImagenBack}
+                        setSrcImagenBack={setSrcImagenBack} />
                 </div>
                 <div className="alta-container__checkbox-group">
                     <label className="checkbox-send" htmlFor="lbl-envio">Envío</label>

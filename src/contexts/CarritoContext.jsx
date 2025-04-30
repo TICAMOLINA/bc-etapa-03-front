@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { peticionesHttp } from "../helpers/peticiones-http";
 
@@ -19,6 +19,14 @@ const CarritoProvider = ( {children} ) => {
         return carrito.find(prod => prod.id === producto.id)
     }
 
+    const [cantidadTotalProductos, setCantidadTotalProductos] = useState(0); 
+
+    useEffect(() => {
+        const total = Array.isArray(carrito)
+          ? carrito.reduce((total, producto) => total + producto.cantidad, 0)
+          : 0;
+        setCantidadTotalProductos(total);
+      }, [carrito]);
 
     const agregarProductoAlCarritoContext = (producto) => {
         if (!elProductoEstaEnElCarrito(producto)) {
@@ -29,6 +37,7 @@ const CarritoProvider = ( {children} ) => {
             productoDeCarrito.cantidad++
             window.localStorage.setItem('carrito', JSON.stringify(carrito))
         }
+        setCantidadTotalProductos((prevCantidad) => prevCantidad + 1);
     }
 
     const eliminarProductoDelCarritoContext = (id) => {
@@ -66,7 +75,9 @@ const CarritoProvider = ( {children} ) => {
         carrito,
         eliminarProductoDelCarritoContext,
         limpiarCarritoContext,
-        guardarCarritoBackendContext
+        guardarCarritoBackendContext,
+        cantidadTotalProductos,
+        setCantidadTotalProductos
     }
 
     return <CarritoContext.Provider value={data}>{children}</CarritoContext.Provider>

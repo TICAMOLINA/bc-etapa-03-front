@@ -41,13 +41,14 @@
             font-weight: 600;
         }
 
-        input {
+        input, select {
             width: 100%;
             padding: 3px;
             margin-bottom: 6px;
             border-radius: 6px;
             border: 1px solid black;
         }
+
 
 
         button {
@@ -160,7 +161,7 @@
                 font-size: 1.2em;
             }
 
-            input {
+            input, select {
                 padding: 8px
             }
         }
