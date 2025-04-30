@@ -14,6 +14,12 @@ const ListadoCarrito = (producto) => {
 
     const handleComprar = () => {
         guardarCarritoBackendContext()
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Compra finalizada con éxito, GRACIAS!",
+            showConfirmButton: true
+          });
     }
 
     const handleLimpiarCarrito = () => {
