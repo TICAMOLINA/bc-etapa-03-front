@@ -9,6 +9,7 @@ const SearchBar = () => {
     const { carrito, cantidadTotalProductos } = useContext(CarritoContext)
     const { textFilter, setTextFilter} = useContext(ProductosContext)
 
+
     return (
         <div className="search-bar">
             <div className="search-bar__logo-container">

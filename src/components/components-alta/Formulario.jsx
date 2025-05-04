@@ -18,6 +18,7 @@ const Formulario = () => {
         descripcion: '',
         stock: '',
         foto: '',
+        sliderFoto: '',
         envio: false
     }
 
@@ -95,9 +96,14 @@ const Formulario = () => {
                 </div>
                 <div>
                     <label htmlFor="lbl-descripcion">Descripción</label>
-                    <input onChange={handleChange}
-                        type="text" id="lbl-descripcion"
-                        name="descripcion" value={form.descripcion} />
+                    <textarea
+                        onChange={handleChange}
+                        id="lbl-descripcion"
+                        name="descripcion"
+                        value={form.descripcion}
+                        rows={2}
+                        cols={50} 
+                    />
                 </div>
                 <div>
                     <label htmlFor="lbl-stock">Stock</label>

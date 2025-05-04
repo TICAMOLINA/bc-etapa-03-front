@@ -41,12 +41,18 @@
             font-weight: 600;
         }
 
-        input, select {
+        input, select, textarea {
             width: 100%;
             padding: 3px;
             margin-bottom: 6px;
             border-radius: 6px;
             border: 1px solid black;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 40px;
+            max-height: 80px;
         }
 
 

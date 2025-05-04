@@ -2,7 +2,7 @@ import menuItems from '../constants/menuItems'
 import './Navbar.scss'
 import NavItem from './NavItem'
 
-const Navbar = () => {
+const Navbar = ( {closeToggleMenu} ) => {
 
 
   return (
@@ -10,7 +10,7 @@ const Navbar = () => {
       <ul className="nav-bar__nav-list">
         {
           menuItems.map((item) => (
-            <NavItem item={item} key={item.id}/>
+            <NavItem item={item} key={item.id} closeToggleMenu={closeToggleMenu}/>
           ))
         }
       </ul>
