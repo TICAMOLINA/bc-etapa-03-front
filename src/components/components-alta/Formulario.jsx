@@ -2,13 +2,9 @@ import { useContext, useEffect, useState } from "react"
 import ProductosContext from "../../contexts/ProductosContext"
 import '../../pages/Alta.scss'
 import DragDrop from "./DragDrop"
-const Formulario = () => {
 
-    const { crearProductoContext,
-        productoAEditar,
-        setProductoAEditar,
-        actualizarProductoContext
-    } = useContext(ProductosContext)
+const Formulario = () => {
+    const { crearProductoContext, productoAEditar, setProductoAEditar, actualizarProductoContext } = useContext(ProductosContext)
 
     const formInicial = {
         id: null,
@@ -23,31 +19,50 @@ const Formulario = () => {
     }
 
     useEffect(() => {
-        productoAEditar ? setForm(productoAEditar) : setForm(formInicial)
+        if (productoAEditar) {
+            setForm(productoAEditar)
+            setFotos({
+                foto: productoAEditar.foto || placeHolderImagen,
+                sliderFoto: productoAEditar.sliderFoto || placeHolderImagen
+            })
+            setSrcImagenBackPrincipal(productoAEditar.foto || placeHolderImagen)
+            setSrcImagenBackSlider(productoAEditar.sliderFoto || placeHolderImagen)
+        } else {
+            setForm(formInicial)
+            setFotos({
+                foto: placeHolderImagen,
+                sliderFoto: placeHolderImagen
+            })
+            setSrcImagenBackPrincipal(placeHolderImagen)
+            setSrcImagenBackSlider(placeHolderImagen)
+        }
     }, [productoAEditar])
 
-
     const [form, setForm] = useState(formInicial)
-
     const placeHolderImagen = 'http://localhost:8080/uploads/elementor-placeholder-image-3.webp'
-    const [foto, setFoto] = useState({ foto: placeHolderImagen })
-    const [srcImagenBack, setSrcImagenBack] = useState(placeHolderImagen)
+    
+    const [fotos, setFotos] = useState({
+        foto: placeHolderImagen,
+        sliderFoto: placeHolderImagen
+    })
+    
+    const [srcImagenBackPrincipal, setSrcImagenBackPrincipal] = useState(placeHolderImagen)
+    const [srcImagenBackSlider, setSrcImagenBackSlider] = useState(placeHolderImagen)
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
         if (form.id === null) {
-            const productoNuevoConImagen = { ...form, ...foto }
+            const productoNuevoConImagen = { ...form, ...fotos }
             crearProductoContext(productoNuevoConImagen)
         } else {
-            const productoNuevoConImagen = { ...form, ...foto }
+            const productoNuevoConImagen = { ...form, ...fotos }
             actualizarProductoContext(productoNuevoConImagen)
         }
         handleReset()
     }
 
     const handleChange = (e) => {
-
         const { type, name, checked, value } = e.target
         setForm({
             ...form,
@@ -58,14 +73,16 @@ const Formulario = () => {
     const handleReset = () => {
         setForm(formInicial)
         setProductoAEditar(null)
-        setFoto({ foto: placeHolderImagen })
-        setSrcImagenBack(placeHolderImagen)
+        setFotos({
+            foto: placeHolderImagen,
+            sliderFoto: placeHolderImagen
+        })
+        setSrcImagenBackPrincipal(placeHolderImagen)
+        setSrcImagenBackSlider(placeHolderImagen)
     }
 
     return (
         <>
-
-
             <form className="alta-container__form-alta" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="lbl-nombre">Nombre</label>
@@ -112,10 +129,23 @@ const Formulario = () => {
                         name="stock" value={form.stock} />
                 </div>
                 <div>
+                    <h3>Imagen principal</h3>
                     <DragDrop
-                        setFoto={setFoto}
-                        srcImagenBack={srcImagenBack}
-                        setSrcImagenBack={setSrcImagenBack} />
+                        setFotos={setFotos}
+                        srcImagenBack={srcImagenBackPrincipal}
+                        setSrcImagenBack={setSrcImagenBackPrincipal}
+                        isPrincipal={true}
+                    />
+                </div>
+                
+                <div>
+                    <h3>Imagen para slider</h3>
+                    <DragDrop
+                        setFotos={setFotos}
+                        srcImagenBack={srcImagenBackSlider}
+                        setSrcImagenBack={setSrcImagenBackSlider}
+                        isPrincipal={false}
+                    />
                 </div>
                 <div className="alta-container__checkbox-group">
                     <label className="checkbox-send" htmlFor="lbl-envio">Envío</label>

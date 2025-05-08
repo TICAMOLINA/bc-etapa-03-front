@@ -2,8 +2,7 @@
 import { peticionesHttp } from '../../helpers/peticiones-http'
 import './DragDrop.scss'
 
-const DragDrop = ({ setFoto, srcImagenBack, setSrcImagenBack }) => {
-
+const DragDrop = ({ setFotos, srcImagenBack, setSrcImagenBack, isPrincipal }) => {
     const arrayEventosDragDrop = ['dragenter', 'dragleave', 'dragover', 'drop']
 
     arrayEventosDragDrop.forEach(eventName => {
@@ -39,40 +38,41 @@ const DragDrop = ({ setFoto, srcImagenBack, setSrcImagenBack }) => {
             }
   
             const imagenUp = await peticionesHttp(url, options)
-            // console.log(imagenUp);
-            setFoto(imagenUp)
+            setFotos(prev => ({
+                ...prev,
+                [isPrincipal ? 'foto' : 'sliderFoto']: imagenUp.foto
+            }))
 
         } catch (error) {
             console.error('[uploadFile]', error)
         }
-
     }
 
     const previewFile = (file) => {
-        // console.log('llego a preview', file);
         const reader = new FileReader()
         reader.readAsDataURL(file)
         reader.addEventListener('loadend', () => {
-        setSrcImagenBack(reader.result)
+            setSrcImagenBack(reader.result)
         })
     }
-
 
     return (
         <div className='drop-area' onDrop={handleDrop}>
             <p>
-                Suba fotos del producto arrastrando dentro del area punteada (<b>drag and drop</b>) o desde el archivo abriendo el <b>cuadro de diálogo</b>.
+                {isPrincipal ? 'Imagen principal' : 'Imagen para slider'} - 
+                Suba fotos arrastrando dentro del área punteada (<b>drag and drop</b>) 
+                o desde el archivo abriendo el <b>cuadro de diálogo</b>.
             </p>
 
-            <input type="file" id="lbl-foto" accept="image/*" onChange={handleChange} />
-            <label className="drop-area-button" htmlFor="lbl-foto">
-                File Dialog
+            <input type="file" id={`lbl-foto-${isPrincipal ? 'principal' : 'slider'}`} 
+                   accept="image/*" onChange={handleChange} />
+            <label className="drop-area-button" htmlFor={`lbl-foto-${isPrincipal ? 'principal' : 'slider'}`}>
+                Seleccionar archivo
             </label>
 
             <div className='drop-area-image'>
                 <img src={srcImagenBack} alt="" />
             </div>
-
         </div>
     )
 }
